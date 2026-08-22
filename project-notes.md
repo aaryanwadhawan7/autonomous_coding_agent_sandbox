@@ -13,6 +13,20 @@
 
     3) Mounting local file via docker or compose 
 
+- For environment setup: NEW ENV => python -m env sandboxEnv, source sandboxEnv/bin/activate (Linux / MacOS), sandboxEnv/Scripts/activate.ps1 (Powershell : Windows)
+
 - Write the simple POST request /execute => this run the code_execute() function
+- you need platform check at the code_execute() function cause it shows conflict with docker
+- you need to import asyncio library to handle async requests
+
+- github : To check the commit in ASCII graph run => git log --graph --all 
+
+- Checklist
+  - Sandbox (executor.py + Dockerfile + FastAPI endpoint) [DONE]
+  - Planner Agent     => breaks user request into steps
+  - Coder Agent       => writes the code
+  - Debugger Agent    => reads error, decides fix or done
+  - Orchestrator      => runs the loop: code -> execute -> debug ->  retry
+  - Final endpoint    - POST /run-agent that ties it all together
 
     

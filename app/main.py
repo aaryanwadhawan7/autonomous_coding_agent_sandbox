@@ -22,7 +22,7 @@ async def execute(coderequest: CodeRequest):
         return {
             'stdout': "",
             'stderr': str(err),
-            'exit_code': 1
+            'exit_code': -1
         }
         
     
