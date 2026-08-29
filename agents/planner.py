@@ -1,6 +1,7 @@
 import os 
 from groq import Groq
-
+from dotenv import load_dotenv
+load_dotenv()
 
 client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
 
@@ -18,7 +19,7 @@ def plan(user_request: str) -> str:
                     'content': user_request
                 }
             ],
-            model = 'llama-3.3-70b-versatile'
+            model = 'qwen/qwen3.8-27b'
         )
         return response.choices[0].message.content
     except Exception as err:

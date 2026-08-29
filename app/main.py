@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from sandbox.executor import execute_code
 import asyncio
+from agents.orchestrator import auto_agent
 
 app = FastAPI()
 
@@ -25,4 +26,7 @@ async def execute(coderequest: CodeRequest):
             'exit_code': -1
         }
         
-    
+@app.post('/run-agent')
+async def run_agent (request: CodeRequest):
+    result = await auto_agent(request.code)
+    return result

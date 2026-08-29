@@ -23,10 +23,19 @@
 
 - Checklist
   - Sandbox (executor.py + Dockerfile + FastAPI endpoint) [DONE]
-  - Planner Agent     => breaks user request into steps
-  - Coder Agent       => writes the code
-  - Debugger Agent    => reads error, decides fix or done
-  - Orchestrator      => runs the loop: code -> execute -> debug ->  retry
+  - Planner Agent     => breaks user request into steps   [DONE]
+  - Coder Agent       => writes the code                  [DONE]
+  - Debugger Agent    => reads error, decides fix or done [DONE]
+  - Orchestrator      => runs the loop: code -> execute -> debug ->  retry [ADVANCED]
   - Final endpoint    - POST /run-agent that ties it all together
+
+  - Agent : Tools via Function Calling, Decision loop, Memory across func. 
+
+  - ADVANCED WORKFLOW:
+    - For each func. LLM assign a tool.
+    - LLM decides the decision loop.
+    - LLM chooses assign the debugger tool based on the decision loop.
+  
+- Check FastAPI backend endpoints: uvicorn app.main:app --reload 
 
   
