@@ -3,6 +3,11 @@ from pydantic import BaseModel
 from sandbox.executor import execute_code
 import asyncio
 from agents.orchestrator import auto_agent
+import sys 
+
+if sys.platform == 'win32':
+    loop = asyncio.SelectorEventLoop()
+    asyncio.set_event_loop(loop)
 
 app = FastAPI()
 

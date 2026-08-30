@@ -38,4 +38,4 @@
   
 - Check FastAPI backend endpoints: uvicorn app.main:app --reload 
 
-  
+- The "Remote end closed connection" from Streamlit means the request is taking too long and Streamlit's own internal timeout is killing it before FastAPI responds.

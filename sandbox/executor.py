@@ -3,10 +3,15 @@ import tempfile
 import os 
 import platform
 
-client = docker.from_env()
+
+# client = docker.from_env()
+# This stops the Docker client from having it's connection reset by Windows
+def get_client ():
+    return docker.from_env()
 
 def execute_code(code: str) -> dict:
     try:
+        client = get_client()
         # created a temp dir 
         with tempfile.TemporaryDirectory() as tmpdir:
             # create the appended code.py in temp dir
