@@ -3,6 +3,8 @@
 An AI agent that writes, executes, and debugs 
 Python code autonomously in an isolated Docker sandbox.
 
+![demo](./assets/Animation.gif)
+
 ## How it works
 ![Architecture Diagram](./assets/coding_agent_architecture.png)
 
